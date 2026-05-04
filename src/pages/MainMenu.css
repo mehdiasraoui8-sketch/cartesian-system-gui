@@ -1,0 +1,244 @@
+.main-menu {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-menu::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(33, 150, 243, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 24px;
+  color: #4fc3f7;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 40px 48px;
+  gap: 40px;
+}
+
+.left-panel {
+  flex: 1;
+  max-width: 560px;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.main-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 40px;
+}
+
+/* Mode buttons */
+.mode-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: left;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mode-btn:hover::before {
+  opacity: 1;
+}
+
+.mode-btn:hover {
+  transform: translateX(6px) translateY(-1px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mode-btn--manuel {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.3);
+}
+
+.mode-btn--import {
+  background: linear-gradient(135deg, #b8a700, #cddc39);
+  color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(205, 220, 57, 0.3);
+}
+
+.mode-btn--formes {
+  background: linear-gradient(135deg, #1565c0, #2196f3);
+  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+}
+
+.mode-btn-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.mode-btn-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mode-btn-label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.mode-btn-desc {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.mode-btn--import .mode-btn-desc {
+  opacity: 0.65;
+}
+
+.mode-btn-arrow {
+  font-size: 28px;
+  font-weight: 300;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* Right panel */
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 420px;
+}
+
+.iso-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 60px rgba(79, 195, 247, 0.2));
+}
+
+/* Footer */
+.footer {
+  padding: 20px 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quit-btn {
+  background: linear-gradient(135deg, #c0392b, #ff5252);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 82, 82, 0.35);
+}
+
+.quit-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 82, 82, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    padding: 30px 24px;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .right-panel {
+    display: none;
+  }
+}
